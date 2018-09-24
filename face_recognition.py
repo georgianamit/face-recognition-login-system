@@ -1,8 +1,12 @@
 import cv2
 import numpy as np
 import pickle
+import os
 
 cap = cv2.VideoCapture(0)
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+image_dir = os.path.join(BASE_DIR, 'images')
 
 face_cascade = cv2.CascadeClassifier('cascades/data/haarcascade_frontalface_alt2.xml')
 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -35,7 +39,7 @@ while(True):
 
 
         img_item = 'my-image.png'
-        cv2.imwrite(img_item, roi_gray)
+        cv2.imwrite(os.path.join(image_dir,img_item), roi_gray)
 
         color = (255, 0, 0)
         stroke = 2
