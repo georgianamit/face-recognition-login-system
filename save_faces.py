@@ -2,12 +2,17 @@ import cv2
 import time
 import os
 
-def save_faces(username):
+def save_detected_faces(username):
     cap = cv2.VideoCapture(0)
     img_no = 1
     count = 50
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    image_dir = os.path.join(os.path.join(BASE_DIR, 'images'),username)
+    path = os.path.join(os.path.join(os.path.join(BASE_DIR, 'assests'),'images'),username)
+    try:
+        os.mkdir(path)
+    except:
+        pass
+    image_dir = path
 
     while count > 0:
         count -= 1
@@ -18,9 +23,5 @@ def save_faces(username):
             img_no += 1
         cv2.imshow('frame',image)
         cv2.waitKey(200)
-
-
     cap.release()
     cv2.destroyAllWindows()
-
-save_faces('spider')
