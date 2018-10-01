@@ -15,7 +15,7 @@ if(choice is "1"):
     print("Training successful")
     
 elif(choice is "2"):
-    # do recognition
-    pass
+    from face_recognition import recognize_face
+    recognize_face()
 else:
     print("Your choice is invalid.")
