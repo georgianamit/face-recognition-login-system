@@ -36,11 +36,11 @@ def recognize_face():
                 name = labels[id_]
                 color = (255, 255, 255)
                 stroke = 2
-                cv2.putText(frame, name, (x,y), font, 1, color, stroke, cv2.LINE_AA)
+                cv2.putText(frame, name, (x,y-10), font, 1, color, stroke, cv2.LINE_AA)
 
 
-            img_item = 'my-image.png'
-            cv2.imwrite(os.path.join(image_dir,img_item), roi_gray)
+            # img_item = 'my-image.png'
+            # cv2.imwrite(os.path.join(image_dir,img_item), roi_gray)
 
             color = (255, 0, 0)
             stroke = 2
@@ -55,3 +55,6 @@ def recognize_face():
 
     cap.release()
     cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    recognize_face()

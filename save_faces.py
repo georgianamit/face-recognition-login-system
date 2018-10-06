@@ -25,3 +25,6 @@ def save_detected_faces(username):
         cv2.waitKey(200)
     cap.release()
     cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    save_detected_faces('spider')

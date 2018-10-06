@@ -32,7 +32,7 @@ def train_faces():
                 final_image = pil_image.resize(size, Image.ANTIALIAS)
                 image_array = np.array(final_image, 'uint8')
                 
-                faces = face_cascade.detectMultiScale(image_array,scaleFactor=1.5,minNeighbors=5)
+                faces = face_cascade.detectMultiScale(image_array,scaleFactor=1.2,minNeighbors=5)
 
                 for (x, y, w, h) in faces:
                     roi = image_array[y:y+h, x:x+w]
@@ -44,5 +44,6 @@ def train_faces():
 
     recognizer.train(trained_faces, np.array(labels))
     recognizer.save(os.path.join(os.path.join(os.path.join(BASE_DIR, 'assests'),'trainner'),'trainner.yml'))
-                    
-train_faces()
+
+if(__name__ == '__main__'):
+    train_faces()
