@@ -7,7 +7,7 @@ def save_detected_faces(username):
     img_no = 1
     count = 50
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    path = os.path.join(os.path.join(os.path.join(BASE_DIR, 'assests'),'images'),username)
+    path = os.path.join(os.path.join(BASE_DIR, 'images'),username)
     try:
         os.mkdir(path)
     except:

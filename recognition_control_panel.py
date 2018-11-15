@@ -10,7 +10,7 @@ if(choice is "1"):
     save_detected_faces(username)
     print("Detected your face.")
     print("Training your face...")
-    from faces_train import train_faces
+    from train_faces import train_faces
     train_faces()
     print("Training successful")
     
