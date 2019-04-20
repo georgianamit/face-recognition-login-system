@@ -2,7 +2,7 @@ print("Welcome to Face Recognition System")
 print("Choose your option")
 print("(1) Register your Face.")
 print("(2) Recognize your Face.")
-choice = input()
+choice = input("Your option: ")
 if(choice is "1"):
     # do registration
     username = input("Username:")
